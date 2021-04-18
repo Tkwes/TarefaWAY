@@ -20,13 +20,13 @@ public class WPManager : MonoBehaviour
     void Start()
     {
         //troca de pontos apos chegadas 
-        if(waypoints.Length > 0)
+        if(waypoints.Length > 0)//condicional 
         {
-            foreach(GameObject wp in waypoints)
+            foreach(GameObject wp in waypoints)//compara os way e posicao 
             {
                 graph.AddNode(wp);
             }
-            foreach(Link l in links)
+            foreach(Link l in links)//condicional 
             {
                 graph.AddEdge(l.node1, l.node2);
                 if(l.dir == Link.direction.BI)

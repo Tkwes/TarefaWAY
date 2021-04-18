@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class FollowPath : MonoBehaviour
 {
-    //criando as variaveis
+    //variaveis
     public GameObject wpManager; //objeto com script
     GameObject[] wps; //list
     NavMeshAgent agent; //recebe o objeto do navemesh
@@ -20,39 +20,44 @@ public class FollowPath : MonoBehaviour
 
     void Start()
     {
-        //pegando o navmeshagent ao iniciar o script
+        //atribuido componente na inicializaçao// 
         agent = GetComponent<NavMeshAgent>();
-        //pegando as variaveis do script WPManager e adicioando ao script
+
+
+        //buscando variaveis do script wpmanager e atribuidos ao script //
         wps = wpManager.GetComponent<WPManager>().waypoints;
 
-        //pegando as variaveis do script WPManager e adicioando ao script
+
         //g = wpManager.GetComponent<WPManager>().graph;
         //currentNode = wps[0];
     }
 
-    //criando um metodo para fazer o tanque ir para o heliporto
+    //metodo de movimentação a novo ponto //
     public void GoToHeli()
     {
-        //setando o desitno no navmesh agent com o waypoint
+        //setando posicao no nav usando o way//
         agent.SetDestination(wps[0].transform.position);
+
 
         //g.AStar(currentNode, wps[0]);
         //currentWP = 0;
     }
-    //criando um metodo para fazer o tanque ir para o ruinas
+    //metodo de movimentação a novo ponto //
     public void GoToRuin()
     {
-        //setando o desitno no navmesh agent com o waypoint
+        //setando posicao no nav usando o way//
         agent.SetDestination(wps[10].transform.position);
+
 
         //g.AStar(currentNode, wps[10]);
         //currentWP = 0;
     }
-    //criando um metodo para fazer o tanque ir para o tanques
+    //metodo de movimentação a novo ponto //
     public void GoToTanks()
     {
-        //setando o desitno no navmesh agent com o waypoint
+        //setando posicao no nav usando o way//
         agent.SetDestination(wps[6].transform.position);
+         
 
         //g.AStar(currentNode, wps[6]);
         //currentWP = 0;
